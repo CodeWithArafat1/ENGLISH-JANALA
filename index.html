@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Ensures proper rendering and touch zooming for all devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>English জানালা</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+
+    <style>
+      .active {
+        background: #422ad5;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar Section -->
+    <nav class="bg-blue-100 py-4 shadow-md">
+      <!-- On mobile (flex-col), items are stacked. On medium screens and up (md:flex-row), they are side-by-side. -->
+      <div
+        class="container mx-auto flex flex-col items-center justify-between gap-4 px-4 md:flex-row"
+      >
+        <!-- Logo and Title -->
+        <div class="flex items-center gap-2">
+          <h1 class="font-bold text-xl">English</h1>
+          <figure>
+            <img src="./assets/logo.png" alt="Logo" class="h-8 w-auto" />
+          </figure>
+          <h1 class="font-bold text-xl">জানালা</h1>
+        </div>
+
+        <!-- Navigation Links -->
+        <!-- flex-wrap allows buttons to wrap to the next line on smaller screens -->
+        <div
+          class="flex flex-wrap items-center justify-center gap-4 text-purple-900 md:gap-6"
+        >
+          <a
+            href="#"
+            class="flex items-center gap-3 rounded px-4 py-1 font-bold outline hover:bg-indigo-600 hover:text-white"
+            ><i class="ri-information-line"></i>FAQ</a
+          >
+          <a
+            href="#"
+            class="flex items-center gap-3 rounded px-4 py-1 font-bold outline hover:bg-indigo-600 hover:text-white"
+            ><i class="ri-book-open-line"></i>Learn</a
+          >
+          <a
+            href="#"
+            class="flex items-center gap-3 rounded px-4 py-1 font-bold outline hover:bg-indigo-600 hover:text-white"
+            ><i class="ri-logout-box-r-line"></i>Logout</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Hero Section -->
+    <main>
+      <!-- On mobile (flex-col-reverse), the text appears above the image. On large screens (lg:flex-row), they are side-by-side. -->
+      <!-- min-h-screen ensures the section takes at least the full height of the viewport -->
+      <div
+        class="container mx-auto flex min-h-screen flex-col-reverse items-center justify-center gap-10 px-4 py-10 text-center lg:flex-row lg:justify-between lg:text-left"
+      >
+        <!-- Text and Form Content -->
+        <div class="flex flex-col items-center gap-5 lg:items-start">
+          <!-- Responsive font size: smaller on mobile, larger on desktops -->
+          <h1 class="text-4xl font-bold md:text-6xl">
+            <span class="text-blue-400">English</span> is Easy!!
+          </h1>
+          <p class="max-w-2xl text-lg md:text-2xl">
+            আজ থেকেই আপনার ভাষা শেখার যাত্রা শুরু করুন। আপনি যদি নতুন হন অথবা
+            আপনার দক্ষতা বাড়াতে চান, আমাদের Interactive Lessons আপনাকে নিয়ে যাবে
+            অন্য একটি Level এ
+          </p>
+
+          <form>
+            <div class="flex w-full max-w-xs flex-col gap-5">
+              <input
+                class="rounded px-2 py-2 outline"
+                type="text"
+                placeholder="Enter Your Name"
+              />
+              <input
+                class="rounded px-2 py-2 outline"
+                type="password"
+                placeholder="****"
+              />
+              <!-- Button is centered on mobile (mx-auto) and left-aligned on large screens (lg:mx-0) -->
+              <button class="btn btn-primary mx-auto w-fit lg:mx-0">
+                Get Started
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Hero Image -->
+        <figure>
+          <!-- The image scales with the screen size but won't exceed its max-width -->
+          <img
+            src="./assets/hero-student.png"
+            alt="Student Learning English"
+            class="w-full max-w-sm md:max-w-md lg:max-w-lg"
+          />
+        </figure>
+      </div>
+    </main>
+
+    <!-- Vocabulary Learning Section -->
+    <section class="mb-10 px-4">
+      <div
+        class="container mx-auto flex flex-col items-center justify-center gap-5"
+      >
+        <!-- Responsive heading size -->
+        <h1 class="text-center text-3xl font-bold md:text-5xl">
+          Let's Learn Vocabularies
+        </h1>
+
+        <!-- Lesson buttons will wrap if there isn't enough space -->
+        <div
+          class="flex flex-wrap justify-center gap-4 md:gap-6"
+          id="btn-lesson"
+        ></div>
+      </div>
+
+      <!-- Vocabulary Cards Grid -->
+      <!-- The grid changes columns based on screen size: 1 on mobile, 2 on small screens, 3 on medium, and 4 on large screens. -->
+      <div
+        class="container mx-auto mt-10 grid grid-cols-1 gap-4 rounded-lg bg-green-100/20 p-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
+        id="show-cards"
+      >
+        <div
+          class="col-span-1 flex flex-col items-center justify-center gap-5 py-10 text-center sm:col-span-2 md:col-span-3 lg:col-span-4"
+        >
+          <p class="text-lg md:text-xl">আপনি এখনো কোন Lesson Select করেন নি</p>
+          <h1 class="text-3xl font-bold md:text-5xl">একটি Lesson Select করুন।</h1>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modal Container and Loading Spinner -->
+    <div class="" id="modal-container"></div>
+    <span
+      class="loading loading-dots loading-xl fixed top-1/2 left-1/2 z-50 -translate-x-1/2 -translate-y-1/2 hidden"
+      id="loading"
+    ></span>
+
+    <!-- Your script file -->
+    <script src="./index.js"></script>
+  </body>
+</html>
