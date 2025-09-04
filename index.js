@@ -7,10 +7,16 @@ const searchInput = document.getElementById("search-input");
 // Search System
 searchBtn.addEventListener("click", async () => {
   showSpinner(true);
+  const btns = document.querySelectorAll(".lesson-btn");
+  btns.forEach((btn) => {
+    btn.classList.remove("active");
+  });
+
   try {
     const url = `https://openapi.programming-hero.com/api/words/all`;
     const res = await fetch(url);
     const data = await res.json();
+
     cardContainer.innerHTML = "";
     const input = searchInput.value.trim().toLowerCase();
     if (input === "") {
@@ -143,6 +149,7 @@ const activeLessonBun = (lessonBtn) => {
 // Load leasson Buttons
 const loadLessonBtn = async () => {
   showSpinner(true);
+  
   const url = "https://openapi.programming-hero.com/api/levels/all";
   const res = await fetch(url);
   const data = await res.json();
@@ -154,6 +161,7 @@ const loadLessonBtn = async () => {
 
     button.addEventListener("click", (e) => {
       displayCard(btn.level_no);
+      searchInput.value = ''
       activeLessonBun(button);
     });
   });
