@@ -2,9 +2,9 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <!-- Ensures proper rendering and touch zooming for all devices -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>English জানালা</title>
+    <title>English Janala</title>
+    <link rel="stylesheet" href="./style.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/daisyui@5"
       rel="stylesheet"
@@ -15,178 +15,220 @@
       href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./style.css" />
+
     <style>
       .active {
-        background: #422ad5;
         color: white;
+        background-color: #4f39f6;
       }
     </style>
   </head>
   <body>
-    <!-- Navbar Section -->
-    <nav class="bg-blue-100 py-4 shadow-md">
-      <!-- On mobile (flex-col), items are stacked. On medium screens and up (md:flex-row), they are side-by-side. -->
-      <div
-        class="container mx-auto flex flex-col items-center justify-between gap-4 px-4 md:flex-row"
-      >
-        <!-- Logo and Title -->
-        <div class="flex items-center gap-2">
-          <h1 class="font-bold text-xl">English</h1>
-          <figure>
-            <img src="./assets/logo.png" alt="Logo" class="h-8 w-auto" />
-          </figure>
-          <h1 class="font-bold text-xl">জানালা</h1>
+    <nav>
+      <div class="navbar bg-base-100 shadow-sm container mx-auto">
+        <div class="flex-1">
+          <a href="#" class="btn btn-ghost text-xl font-bold">
+            English <img src="./assets/logo.png" alt="" /> জানালা
+          </a>
         </div>
-
-        <!-- Navigation Links -->
-        <!-- flex-wrap allows buttons to wrap to the next line on smaller screens -->
-        <div
-          class="flex flex-wrap items-center justify-center gap-4 text-purple-900 md:gap-6"
-        >
-          <a
-            href="#"
-            class="flex items-center gap-3 rounded px-4 py-1 font-bold outline hover:bg-indigo-600 hover:text-white"
-            ><i class="ri-information-line"></i>FAQ</a
-          >
-          <a
-            href="#"
-            class="flex items-center gap-3 rounded px-4 py-1 font-bold outline hover:bg-indigo-600 hover:text-white"
-            ><i class="ri-book-open-line"></i>Learn</a
-          >
-          <a
-            href="#"
-            class="flex items-center gap-3 rounded px-4 py-1 font-bold outline hover:bg-indigo-600 hover:text-white"
-            ><i class="ri-logout-box-r-line"></i>Logout</a
-          >
+        <div class="flex-none">
+          <ul class="menu menu-horizontal px-1 text-xl space-x-5">
+            <li>
+              <a class="outline hover:bg-indigo-600 hover:text-white">Link</a>
+            </li>
+            <li>
+              <a class="outline hover:bg-indigo-600 hover:text-white">Learn</a>
+            </li>
+          </ul>
         </div>
       </div>
     </nav>
-
-    <!-- Main Hero Section -->
     <main>
-      <!-- On mobile (flex-col-reverse), the text appears above the image. On large screens (lg:flex-row), they are side-by-side. -->
-      <!-- min-h-screen ensures the section takes at least the full height of the viewport -->
-      <div
-        class="container mx-auto flex min-h-screen flex-col-reverse items-center justify-center gap-10 px-4 py-10 text-center lg:flex-row lg:justify-between lg:text-left"
-      >
-        <!-- Text and Form Content -->
-        <div class="flex flex-col items-center gap-5 lg:items-start">
-          <!-- Responsive font size: smaller on mobile, larger on desktops -->
-          <h1 class="text-4xl font-bold md:text-6xl">
-            <span class="text-blue-400">English</span> is Easy!!
-          </h1>
-          <p class="max-w-2xl text-lg md:text-2xl">
-            আজ থেকেই আপনার ভাষা শেখার যাত্রা শুরু করুন। আপনি যদি নতুন হন অথবা
-            আপনার দক্ষতা বাড়াতে চান, আমাদের Interactive Lessons আপনাকে নিয়ে
-            যাবে অন্য একটি Level এ
-          </p>
-
-          <form>
-            <div class="flex w-full max-w-xs flex-col gap-5">
+      <div class="hero bg-base-200 min-h-screen">
+        <div class="hero-content flex-col lg:flex-row-reverse">
+          <img src="./assets/hero-student.png" class="w-[50%]" />
+          <div>
+            <h1 class="text-6xl font-bold">
+              <span class="text-blue-400">English</span> is Easy!!
+            </h1>
+            <p class="py-6 text-xl">
+              আজ থেকেই আপনার ভাষা শেখার যাত্রা শুরু করুন। আপনি যদি নতুন হন অথবা
+              আপনার দক্ষতা বাড়াতে চান, আমাদের Interactive Lessons আপনাকে নিয়ে
+              যাবে অন্য একটি Level এ
+            </p>
+            <form class="flex flex-col gap-5">
               <input
-                class="rounded px-2 py-2 outline"
                 type="text"
                 placeholder="Enter Your Name"
+                class="input input-md"
               />
               <input
-                class="rounded px-2 py-2 outline"
                 type="password"
-                placeholder="****"
+                placeholder="******"
+                class="input input-md"
               />
-              <!-- Button is centered on mobile (mx-auto) and left-aligned on large screens (lg:mx-0) -->
-              <button class="btn btn-primary mx-auto w-fit lg:mx-0">
-                Get Started
-              </button>
-            </div>
-          </form>
+              <button class="btn btn-primary w-fit">Get Started</button>
+            </form>
+          </div>
         </div>
-
-        <!-- Hero Image -->
-        <figure>
-          <!-- The image scales with the screen size but won't exceed its max-width -->
-          <img
-            src="./assets/hero-student.png"
-            alt="Student Learning English"
-            class="w-full max-w-sm md:max-w-md lg:max-w-lg"
-          />
-        </figure>
       </div>
     </main>
-
-    <!-- Vocabulary Learning Section -->
-    <section class="mb-10 px-4">
-    
-      <div
-        class="container mx-auto flex flex-col items-center justify-center gap-5"
-      >
-        <!-- Responsive heading size -->
-        <h1 class="text-center text-3xl font-bold md:text-5xl">
-          Let's Learn Vocabularies
+    <section class="my-20">
+      <div class="flex items-center flex-col space-y-10">
+        <h1 class="text-4xl font-bold">
+          <span class="text-cyan-400">Let's</span> Learn Vocabularies
         </h1>
-
-        <!-- Lesson buttons will wrap if there isn't enough space -->
-        <div
-          class="flex flex-wrap justify-center gap-4 md:gap-6"
-          id="btn-lesson"
-        ></div>
+        <div class="flex justify-center items-center flex-wrap gap-2" id="lesson-btn--container"></div>
       </div>
+    </section>
 
-    
+    <!-- Search Input  -->
 
-      <!-- search input  -->
-      <div class="join flex justify-center mt-10">
-        <div>
-          <label class="input validator join-item">
-            <svg
-              class="h-[1em] opacity-50"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-            >
-              <g
-                stroke-linejoin="round"
-                stroke-linecap="round"
-                stroke-width="2.5"
-                fill="none"
-                stroke="currentColor"
-              >
-                <rect width="20" height="16" x="2" y="4" rx="2"></rect>
-                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
-              </g>
-            </svg>
-            <input type="text" placeholder="Search" required class="outline-0 border-0" id="search-input"/>
-          </label>
+    <section class="">
+        <div class="container mx-auto flex justify-center items-center ">
+            <input type="text" placeholder="Search Vocabulary" class="outline-0 border-r-0 border-indigo-600 border-2 rounded-l px-2 py-[6px] " id="search-input">
+            <button class="btn btn-primary rounded-none" id="search-btn">Search</button>
         </div>
-        <button id="btn-search" class="btn btn-neutral join-item">Search</button>
-      </div>
-      <!-- Vocabulary Cards Grid -->
-      <!-- The grid changes columns based on screen size: 1 on mobile, 2 on small screens, 3 on medium, and 4 on large screens. -->
+    </section>
+
+    <!-- Show modal -->
+    <!-- Open the modal using ID.showModal() method -->
+    <!-- <button class="btn" onclick="my_modal.showModal()">open modal</button> -->
+    <section id="show-modal"></section>
+
+    <!-- Card container  -->
+    <section class="my-20 bg-blue-50/30">
       <div
-        class="container mx-auto mt-10 grid grid-cols-1 gap-4 rounded-lg bg-green-100/20 p-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
-        id="show-cards"
+        class="container mx-auto grid grid-cols-1 gap-5 xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 text-center px-4 md:px-0 items-center py-10"
+        id="card-container"
       >
         <div
-          class="col-span-1 flex flex-col items-center justify-center gap-5 py-10 text-center sm:col-span-2 md:col-span-3 lg:col-span-4"
+          class="flex flex-col justify-center items-center col-span-4 py-20 gap-4 text-center"
         >
-          <p class="text-lg md:text-xl">আপনি এখনো কোন Lesson Select করেন নি</p>
-          <h1 class="text-3xl font-bold md:text-5xl">
-            একটি Lesson Select করুন।
-          </h1>
+          <div class="flex items-center flex-col justify-center gap-5">
+    
+            <p class="text-gray-500">
+              আপনি এখনো কোন Lesson Select করেন নি।
+            </p>
+            <h1 class="text-3xl font-bold">একটি Lesson Select করুন।</h1>
+          </div>
         </div>
       </div>
     </section>
-    <!-- loading spinner  -->
-      <div class="justify-center items-center mt-10 hidden" id="loading">
-        <span
-          class="loading loading-dots loading-xl -translate-x-1/2 -translate-y-1/2"
-        ></span>
+
+    <section class="justify-center hidden" id="spinner">
+      <span class="loading loading-bars loading-xl"></span>
+    </section>
+
+    <section class="my-20">
+      <div class="container mx-auto">
+        <h1 class="text-4xl font-bold text-center py-20">
+          <span class="text-cyan-400">Frequently</span> Asked Questions
+        </h1>
+        <div class="">
+          <div
+            class="collapse collapse-plus bg-base-100 border border-base-300"
+          >
+            <input type="radio" name="my-accordion-3" checked="checked" />
+            <div class="collapse-title font-semibold">
+              How can I start learning English on this website?
+            </div>
+            <div class="collapse-content text-sm">
+              You can start by exploring our beginner lessons, interactive
+              exercises, and quizzes. We also offer structured courses to guide
+              you step by step.
+            </div>
+          </div>
+          <div
+            class="collapse collapse-plus bg-base-100 border border-base-300"
+          >
+            <input type="radio" name="my-accordion-3" />
+            <div class="collapse-title font-semibold">
+              Is this website free to use?
+            </div>
+            <div class="collapse-content text-sm">
+              Click on "Forgot Password" on the login page and follow the
+              instructions sent to your email.
+            </div>
+          </div>
+          <div
+            class="collapse collapse-plus bg-base-100 border border-base-300"
+          >
+            <input type="radio" name="my-accordion-3" />
+            <div class="collapse-title font-semibold">
+              How do I update my profile information?
+            </div>
+            <div class="collapse-content text-sm">
+              Go to "My Account" settings and select "Edit Profile" to make
+              changes.
+            </div>
+          </div>
+        </div>
       </div>
+    </section>
 
+    <footer class="footer sm:footer-horizontal bg-blue-100 p-10">
+      <div class="flex container mx-auto justify-between">
+        <aside>
+          <div class="flex-1">
+            <a href="#" class="flex items-center gap-2 text-xl font-bold">
+              English <img src="./assets/logo.png" alt="" /> জানালা
+            </a>
+          </div>
 
-    <!-- Modal Container and Loading Spinner -->
-    <div class="" id="modal-container"></div>
+          <p>
+            ইংরেজি শিখুন সহজে
+            <br />
+            Providing ED-Tech Applications since 2025
+          </p>
+        </aside>
+        <nav>
+          <h6 class="footer-title">Social</h6>
+          <div class="grid grid-flow-col gap-4">
+            <a>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                class="fill-current"
+              >
+                <path
+                  d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"
+                ></path>
+              </svg>
+            </a>
+            <a>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                class="fill-current"
+              >
+                <path
+                  d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"
+                ></path>
+              </svg>
+            </a>
+            <a>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                class="fill-current"
+              >
+                <path
+                  d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"
+                ></path>
+              </svg>
+            </a>
+          </div>
+        </nav>
+      </div>
+    </footer>
 
-    <!-- script file -->
     <script src="./index.js"></script>
   </body>
 </html>
