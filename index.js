@@ -10,6 +10,7 @@ document
   .getElementById("btn-search")
   .addEventListener("click", async function (e) {
     e.preventDefault();
+    showLoading(true);
     const input = document
       .getElementById("search-input")
       .value.trim()
@@ -27,6 +28,7 @@ document
       "কোন Vocabulary খুঁজে পাওয়া যায়নি।",
       "দয়া করে অন্য কিছু সার্চ করুন"
     );
+    showLoading(false);
   });
 
 const displayData = (data, fmsg, smgs) => {
@@ -89,13 +91,15 @@ const activeLessonBtn = (lessonBtn) => {
 };
 const showSentence = (arr) => {
   const htmlElement = arr.map((ele) => {
-    return `<span class="btn">${ele}</span>`;
+    return `<span class="btn" onclick="pronounceWord('${ele}')">${ele}</span>`;
   });
+  
   return htmlElement.join(" ");
 };
 
 const showLoading = (status) => {
   const loading = document.getElementById("loading");
+
   if (status) {
     loading.classList.remove("hidden");
     loading.classList.add("flex");
@@ -131,7 +135,7 @@ const openModal = async (id) => {
       </div>
       <div  class="py-4 space-y-2">
       <p class="text-xl font-bold">সমার্থক শব্দ গুলো</p>
-      <p>${showSentence(ele.synonyms) || "সমর্থক শব্দ খুঁজে পাওয়া যায়নি"}</p>
+      <p >${showSentence(ele.synonyms) || "সমর্থক শব্দ খুঁজে পাওয়া যায়নি"}</p>
       </div>
       <div class="modal-action">
         <form method="dialog">
