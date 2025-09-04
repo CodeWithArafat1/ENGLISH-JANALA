@@ -15,7 +15,7 @@
       href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
       rel="stylesheet"
     />
-
+    <link rel="stylesheet" href="./style.css" />
     <style>
       .active {
         background: #422ad5;
@@ -78,8 +78,8 @@
           </h1>
           <p class="max-w-2xl text-lg md:text-2xl">
             আজ থেকেই আপনার ভাষা শেখার যাত্রা শুরু করুন। আপনি যদি নতুন হন অথবা
-            আপনার দক্ষতা বাড়াতে চান, আমাদের Interactive Lessons আপনাকে নিয়ে যাবে
-            অন্য একটি Level এ
+            আপনার দক্ষতা বাড়াতে চান, আমাদের Interactive Lessons আপনাকে নিয়ে
+            যাবে অন্য একটি Level এ
           </p>
 
           <form>
@@ -131,6 +131,38 @@
         ></div>
       </div>
 
+      <!-- loading spinner  -->
+      <div class="justify-center items-center mt-10 hidden" id="loading">
+        <span
+          class="loading loading-dots loading-xl -translate-x-1/2 -translate-y-1/2"
+        ></span>
+      </div>
+
+      <!-- search input  -->
+      <div class="join flex justify-center mt-10">
+        <div>
+          <label class="input validator join-item">
+            <svg
+              class="h-[1em] opacity-50"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+            >
+              <g
+                stroke-linejoin="round"
+                stroke-linecap="round"
+                stroke-width="2.5"
+                fill="none"
+                stroke="currentColor"
+              >
+                <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+              </g>
+            </svg>
+            <input type="text" placeholder="Search" required class="outline-0 border-0" id="search-input"/>
+          </label>
+        </div>
+        <button id="btn-search" class="btn btn-neutral join-item">Search</button>
+      </div>
       <!-- Vocabulary Cards Grid -->
       <!-- The grid changes columns based on screen size: 1 on mobile, 2 on small screens, 3 on medium, and 4 on large screens. -->
       <div
@@ -141,19 +173,17 @@
           class="col-span-1 flex flex-col items-center justify-center gap-5 py-10 text-center sm:col-span-2 md:col-span-3 lg:col-span-4"
         >
           <p class="text-lg md:text-xl">আপনি এখনো কোন Lesson Select করেন নি</p>
-          <h1 class="text-3xl font-bold md:text-5xl">একটি Lesson Select করুন।</h1>
+          <h1 class="text-3xl font-bold md:text-5xl">
+            একটি Lesson Select করুন।
+          </h1>
         </div>
       </div>
     </section>
 
     <!-- Modal Container and Loading Spinner -->
     <div class="" id="modal-container"></div>
-    <span
-      class="loading loading-dots loading-xl fixed top-1/2 left-1/2 z-50 -translate-x-1/2 -translate-y-1/2 hidden"
-      id="loading"
-    ></span>
 
-    <!-- Your script file -->
+    <!-- script file -->
     <script src="./index.js"></script>
   </body>
 </html>
